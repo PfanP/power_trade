@@ -11,8 +11,6 @@
     "yarn": "*"
   },
   "scripts": {
-    "precommit": "yarn lint",
-    "prestart": "yarn docs",
     "start": "nodemon ./src/index.js",
     "dev": "nodemon ./src/index.js",
     "lint": "eslint ./src/ --ignore-path .gitignore --ignore-pattern internals/scripts",
@@ -27,8 +25,6 @@
     "validate": "yarn lint && yarn test",
     "postpublish": "git push --tags",
     "deploy": "sh ./deploy.sh",
-    "docs": "apidoc -i src -o docs",
-    "postdocs": "opn docs/index.html",
     "docker:start": "cross-env NODE_ENV=production pm2-docker start ./src/index.js",
     "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
     "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
